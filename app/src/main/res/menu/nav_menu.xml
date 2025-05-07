@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"
+        android:title="@string/home"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/matchesFragment"
+        android:icon="@drawable/matches"
+        android:title="@string/matches"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/seriesFragment"
+        android:icon="@drawable/series"
+        android:title="@string/series"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/rankingFragment"
+        android:icon="@drawable/ranking"
+        android:title="@string/ranking"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/more"
+        android:title="@string/more"
+        app:showAsAction="always" />
+</menu>

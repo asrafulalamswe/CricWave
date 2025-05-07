@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="score"
+            type="com.mdasrafulalam.cricwave.model.fixtureswithbattingscore.Batting" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/batterName"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:textSize="@dimen/sp20"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            app:setPlayerNameById="@{score.player_id}"
+            tools:text="Steve Smith"/>
+        <TextView
+            android:id="@+id/batterRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/sp20"
+            android:layout_weight="1"
+            android:text="@{score.score.toString()}"
+            tools:text="32"/>
+        <TextView
+            android:id="@+id/batterBallPlayed"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp20"
+            android:text="@{score.ball.toString()}"
+            tools:text="20"/>
+        <TextView
+            android:id="@+id/batterTotalFours"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/sp20"
+            android:text="@{score.four_x.toString()}"
+            tools:text="4"/>
+        <TextView
+            android:id="@+id/batterTotalSixes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp20"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{score.six_x.toString()}"
+            tools:text="6"/>
+        <TextView
+            android:id="@+id/batterStrikeRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp20"
+            android:gravity="end"
+            android:text="@{score.rate.toString()}"
+            android:layout_weight="3"
+            tools:text="129.4"/>
+    </LinearLayout>
+</layout>

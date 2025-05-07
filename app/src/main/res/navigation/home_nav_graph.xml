@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bookMarkFragment"
+            app:destination="@id/bookMarkFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tournamentFixturesFragment"
+            app:destination="@id/tournamentFixturesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookMarkFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.BookMarkFragment"
+        android:label="@string/bookmark_menu_title">
+        <action
+            android:id="@+id/action_bookMarkFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_bookMarkFragment_to_tournamentFixturesFragment"
+            app:destination="@id/tournamentFixturesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.MatchesFragment"
+        android:label="@string/matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_matchesFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.SeriesFragment"
+        android:label="@string/series"
+        tools:layout="@layout/fragment_series" >
+        <action
+            android:id="@+id/action_seriesFragment_to_tournamentFixturesFragment"
+            app:destination="@id/tournamentFixturesFragment" />
+        <action
+            android:id="@+id/action_seriesFragment_to_teamDetailsFragment"
+            app:destination="@id/teamDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankingFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.RankingFragment"
+        android:label="@string/ranking"
+        tools:layout="@layout/fragment_ranking" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.MoreFragment"
+        android:label="@string/more"
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_t20LeaguesFragment"
+            app:destination="@id/t20LeaguesFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentMatchesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.RecentMatchesFragment"
+        android:label="@string/recent_matches"
+        tools:layout="@layout/fragment_recent_matches" >
+        <action
+            android:id="@+id/action_recentMatchesFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingMatchesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.UpcomingMatchesFragment"
+        android:label="@string/upcoming_matches"
+        tools:layout="@layout/fragment_upcoming" />
+    <fragment
+        android:id="@+id/liveMatchesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.LiveMatchesFragment"
+        android:label="@string/live_matches"
+        tools:layout="@layout/fragment_live_matches" />
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.MatchDetailsFragment"
+        android:label="@string/match_details"
+        tools:layout="@layout/fragment_match_details" >
+        <argument
+            android:name="matchInfo"
+            app:argType="com.mdasrafulalam.cricwave.model.fixturesfilteringdateincludingruns.Data" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_matchesFragment"
+            app:destination="@id/matchesFragment"
+            app:popUpTo="@id/matchesFragment" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_recentMatchesFragment"
+            app:destination="@id/recentMatchesFragment" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_t20LeaguesFragment"
+            app:destination="@id/t20LeaguesFragment" />
+        <argument
+            android:name="lastDestination"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_teamDetailsFragment"
+            app:destination="@id/teamDetailsFragment" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_tournamentFixturesFragment"
+            app:destination="@id/tournamentFixturesFragment" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.TeamsFragment"
+        android:label="@string/teams"
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_teamsFragment_to_teamDetailsFragment"
+            app:destination="@id/teamDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.CompetitionsFragment"
+        android:label="@string/tournaments1"
+        tools:layout="@layout/fragment_competitions" />
+    <fragment
+        android:id="@+id/tournamentFixturesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.TournamentFixturesFragment"
+        android:label="@string/tournament_fixure"
+        tools:layout="@layout/fragment_tournament_fixtures" >
+        <argument
+            android:name="stage_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_tournamentFixturesFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+        <argument
+            android:name="last_dest"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tournamentFixturesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_tournamentFixturesFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
+        <action
+            android:id="@+id/action_tournamentFixturesFragment_to_bookMarkFragment"
+            app:destination="@id/bookMarkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.PlayerDetailsFragment"
+        android:label="@string/player_info"
+        tools:layout="@layout/fragment_player_details" >
+        <argument
+            android:name="playerInfo"
+            app:argType="com.mdasrafulalam.cricwave.model.players.Data" />
+    </fragment>
+    <fragment
+        android:id="@+id/playersDetailsOdiFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.PlayersDetailsOdiFragment"
+        android:label="fragment_players_details_odi"
+        tools:layout="@layout/fragment_players_details_odi" />
+    <fragment
+        android:id="@+id/playersDetailsT20Fragment"
+        android:name="com.mdasrafulalam.cricwave.ui.PlayersDetailsT20Fragment"
+        android:label="fragment_players_details_t20"
+        tools:layout="@layout/fragment_players_details_t20" />
+    <fragment
+        android:id="@+id/playersDetailsTestFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.PlayersDetailsTestFragment"
+        android:label="fragment_players_details_test"
+        tools:layout="@layout/fragment_players_details_test" />
+    <fragment
+        android:id="@+id/teamDetailsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.TeamDetailsFragment"
+        android:label="@string/team_info"
+        tools:layout="@layout/fragment_team_details" >
+        <argument
+            android:name="teamDetails"
+            app:argType="com.mdasrafulalam.cricwave.model.teams.Data" />
+        <action
+            android:id="@+id/action_teamDetailsFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+        <action
+            android:id="@+id/action_teamDetailsFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/globalOdiRankFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.GlobalOdiRankFragment"
+        android:label="fragment_global_odi_rank"
+        tools:layout="@layout/fragment_global_odi_rank" />
+    <fragment
+        android:id="@+id/globalT20RankFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.GlobalT20RankFragment"
+        android:label="fragment_global_t20_rank"
+        tools:layout="@layout/fragment_global_t20_rank" />
+    <fragment
+        android:id="@+id/globalTestRankFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.GlobalTestRankFragment"
+        android:label="fragment_global_test_rank"
+        tools:layout="@layout/fragment_global_test_rank" />
+    <fragment
+        android:id="@+id/t20LeaguesFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.T20LeaguesFragment"
+        android:label="@string/leagues"
+        tools:layout="@layout/fragment_t20_leagues" >
+        <action
+            android:id="@+id/action_t20LeaguesFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+        <action
+            android:id="@+id/action_t20LeaguesFragment_to_moreFragment"
+            app:destination="@id/moreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/t20ILeagueFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.T20ILeagueFragment"
+        android:label="@string/t20I"
+        tools:layout="@layout/fragment_t20_i_league" />
+    <fragment
+        android:id="@+id/bblLeagueFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.BblLeagueFragment"
+        android:label="@string/big_bash"
+        tools:layout="@layout/fragment_bbl_league" />
+    <fragment
+        android:id="@+id/csaT20LeagueFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.CsaT20LeagueFragment"
+        android:label="@string/csat20challange"
+        tools:layout="@layout/fragment_csa_t20_league" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.StatisticsFragment"
+        android:label="@string/team_stats"
+        tools:layout="@layout/fragment_statistics" >
+        <action
+            android:id="@+id/action_statisticsFragment_to_moreFragment"
+            app:destination="@id/moreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.mdasrafulalam.cricwave.ui.WebViewFragment"
+        android:label="@string/newws_detsils"
+        tools:layout="@layout/fragment_web_view" >
+        <action
+            android:id="@+id/action_webViewFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

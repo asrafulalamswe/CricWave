@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <group android:checkableBehavior="single" android:id="@+id/group1">
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/house"
+            android:title="@string/home"
+            app:showAsAction="always"
+            tools:ignore="AlwaysShowAction" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/group2">
+        <item
+            android:id="@+id/liveMatchesFragment"
+            android:icon="@drawable/live"
+            android:title="@string/live_matches"
+            app:showAsAction="always" />
+    </group>
+    <group
+        android:id="@+id/group3"
+        android:enabled="true"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/recentMatchesFragment"
+            android:icon="@drawable/recent"
+            android:title="@string/recent_matches"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/upcomingMatchesFragment"
+            android:icon="@drawable/upcoming"
+            android:title="@string/upcoming_matches"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/seriesFragment"
+            android:icon="@drawable/series"
+            android:title="@string/browse_series"
+            app:showAsAction="always" />
+    </group>
+    <group
+        android:id="@+id/group4"
+        android:checkableBehavior="single"
+        android:enabled="true">
+        <item
+            android:id="@+id/bookMarkFragment"
+            android:icon="@drawable/bookmark_image"
+            android:title="@string/bookmark_menu_title"
+            app:showAsAction="always" />
+    </group>
+    <group
+        android:id="@+id/group5"
+        android:checkableBehavior="single"
+        android:enabled="true">
+        <item
+            android:id="@+id/nav_item_switch"
+            android:icon="@drawable/night_mode"
+            android:title="@string/dark_theme"
+            app:actionViewClass="androidx.appcompat.widget.SwitchCompat"
+            app:showAsAction="always" />
+    </group>
+    <group
+        android:id="@+id/group6"
+        android:checkableBehavior="single"
+        android:enabled="true">
+        <item
+            android:id="@+id/nav_item_voice_switch"
+            android:icon="@drawable/microphone"
+            android:title="@string/voice_command_recog"
+            app:actionViewClass="androidx.appcompat.widget.SwitchCompat"
+            app:showAsAction="always" />
+    </group>
+
+    
+</menu>

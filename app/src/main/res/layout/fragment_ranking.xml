@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.RankingFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/new_rocker"
+            android:gravity="center"
+            android:textColor="@color/color_author"
+            android:text="@string/international_ranking"
+            android:textSize="35sp" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/rankTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_green"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:minWidth="40dp"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabIndicatorFullWidth="false"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#08910E"
+            app:tabPaddingStart="8dp"
+            app:tabPaddingEnd="8dp"
+            app:tabMode="scrollable"
+            app:tabIndicatorGravity="bottom"
+            app:tabSelectedTextColor="@color/tab_selected_text"
+            app:tabTextColor="@color/grey" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/rankViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".ui.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/loadingIMG"
+                android:visibility="gone"
+                android:src="@drawable/loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+           <LinearLayout
+               android:id="@+id/mainContentLL"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+               <TextView
+                   android:layout_marginStart="@dimen/dp_10"
+                   android:layout_marginTop="@dimen/dp_10"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/amarante"
+                   android:text="@string/please_swipw_right_for_more"
+                   android:textSize="@dimen/sp_30"
+                   android:textColor="@color/swipe_color_1"
+                   android:textStyle="bold"/>
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/homeSummeryRV"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       tools:listitem="@layout/upcoming_match_list_item"/>
+
+               </LinearLayout>
+               <HorizontalScrollView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="300dp"
+                       android:orientation="horizontal">
+
+                       <androidx.cardview.widget.CardView
+                           android:id="@+id/homeNewsCV1"
+                           android:layout_width="300dp"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="15dp"
+                           app:contentPadding="@dimen/dp_16"
+                           app:cardCornerRadius="16dp"
+                           app:cardElevation="12dp"
+                           app:cardBackgroundColor="@color/color_news_bg">
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:weightSum="7"
+                               android:orientation="vertical">
+
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="4"
+                                   android:src="@drawable/news1" />
+
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="3"
+                                   android:textSize="20sp"
+                                   android:textColor="@color/black"
+                                   android:textStyle="bold"
+                                   android:text="@string/news1" />
+                           </LinearLayout>
+                       </androidx.cardview.widget.CardView>
+
+                       <androidx.cardview.widget.CardView
+                           android:id="@+id/homeNewsCV2"
+                           android:layout_width="300dp"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="15dp"
+                           app:contentPadding="@dimen/dp_16"
+                           app:cardCornerRadius="16dp"
+                           app:cardElevation="12dp"
+                           app:cardBackgroundColor="@color/color_news_bg">
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:weightSum="7"
+                               android:orientation="vertical">
+
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="4"
+                                   android:src="@drawable/news2"
+                                   tools:ignore="ContentDescription" />
+
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="3"
+                                   android:textSize="20sp"
+                                   android:textColor="@color/black"
+                                   android:textStyle="bold"
+                                   android:text="@string/news2" />
+                           </LinearLayout>
+                       </androidx.cardview.widget.CardView>
+
+                       <androidx.cardview.widget.CardView
+                           android:id="@+id/homeNewsCV3"
+                           android:layout_width="300dp"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="15dp"
+                           app:contentPadding="@dimen/dp_16"
+                           app:cardCornerRadius="16dp"
+                           app:cardElevation="12dp"
+                           app:cardBackgroundColor="@color/color_news_bg">
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:weightSum="7"
+                               android:orientation="vertical">
+
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="4"
+                                   android:src="@drawable/news3" />
+
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="0dp"
+                                   android:layout_weight="3"
+                                   android:textSize="20sp"
+                                   android:textColor="@color/black"
+                                   android:textStyle="bold"
+                                   android:text="@string/news3" />
+                           </LinearLayout>
+                       </androidx.cardview.widget.CardView>
+                   </LinearLayout>
+               </HorizontalScrollView>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="30sp"
+                   android:layout_marginStart="@dimen/dp_10"
+                   android:layout_marginTop="@dimen/dp_10"
+                   android:text="@string/favourite_series"
+                   android:gravity="center"
+                   android:textColor="@color/black"
+                   android:fontFamily="@font/new_rocker"
+                   android:background="@color/color_tab_text"/>
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/homeFavSeriesRV"
+                   android:layout_margin="@dimen/dp_10"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:nestedScrollingEnabled="true"/>
+           </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

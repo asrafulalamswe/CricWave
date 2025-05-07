@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="playerInfo"
+            type="com.mdasrafulalam.cricwave.model.players.Data" />
+    </data>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/palyerslistItemNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp20"
+                android:textStyle="bold"
+                android:text="@{playerInfo.fullname}"
+                tools:text="Shakib Al Hasan"/>
+            <ImageView
+                android:id="@+id/palyerslistItemImageIV"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:setImageResources="@{playerInfo.image_path}"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:src="@drawable/international"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/palyerslistItemCountryTV"
+            android:layout_below="@+id/palyerslistItemNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp20"
+            android:textStyle="bold"
+            app:setCountryNameById="@{playerInfo.country_id}"
+            tools:text="Bangladesh"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="commentry"
+            type="com.mdasrafulalam.cricwave.model.fixturesbyidincludeballs.Ball" />
+    </data>
+
+    <LinearLayout
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@{String.valueOf(commentry.ball)}"
+            tools:text="2.1"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{String.valueOf(commentry.bowler.fullname)}"
+            tools:text="Bowler"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/to"
+            tools:text="to"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{String.valueOf(commentry.batsman.fullname)}"
+            tools:text="Batsman"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{commentry.score.name}"
+            tools:text="4 Runs"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</layout>

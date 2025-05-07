@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="t20BattingData"
+            type="com.mdasrafulalam.cricwave.model.playerinfowithcareerbyid.Batting" />
+        <variable
+            name="t20BowlingData"
+            type="com.mdasrafulalam.cricwave.model.playerinfowithcareerbyid.Bowling" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.PlayersDetailsT20Fragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/playersT20BatttingShowTV"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/batting"
+                android:textColor="@color/white"
+                android:fontFamily="@font/new_rocker"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bg_selector_shape"
+                android:textSize="30sp"
+                app:drawableEndCompat="@drawable/expand"
+                app:drawableTint="@color/white" />
+            <LinearLayout
+                android:id="@+id/battingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totalT20matchesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/total_match_played"
+                    android:text="@{@string/total_match_played(String.valueOf(t20BattingData.matches))}"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20InningsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/innings"
+                    android:text="@{@string/innings(String.valueOf(t20BattingData.innings))}"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20RunsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_runs(String.valueOf(t20BattingData.runs_scored))}"
+                    tools:text="@string/total_runs"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20HighestScoreTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/highest_innings(String.valueOf(t20BattingData.highest_inning_score))}"
+                    tools:text="@string/highest_innings"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20AverageTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/average_score(String.valueOf(t20BattingData.average))}"
+                    tools:text="@string/average_score"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20StrikeRateTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/strike_rate(String.valueOf(t20BattingData.strike_rate))}"
+                    tools:text="@string/strike_rate"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20UnbeatensTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/unbeateans(String.valueOf(t20BattingData.not_outs))}"
+                    tools:text="@string/unbeateans"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20CenturiesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/hundreds(String.valueOf(t20BattingData.hundreds))}"
+                    tools:text="@string/hundreds"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20FiftiesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/fifties(String.valueOf(t20BattingData.fifties))}"
+                    tools:text="@string/fifties"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20BoundariesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_boundaries(String.valueOf(t20BattingData.four_x+t20BattingData.six_x))}"
+                    tools:text="@string/total_boundaries"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/playersT20BowlingShowTV"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bowling"
+                android:textColor="@color/white"
+                android:fontFamily="@font/new_rocker"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bg_selector_shape"
+                android:textSize="30sp"
+                app:drawableEndCompat="@drawable/expand"
+                app:drawableTint="@color/white" />
+            <LinearLayout
+                android:id="@+id/bowlingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/totalT20bowlingmatchesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_match_played(String.valueOf(t20BowlingData.matches))}"
+                    tools:text="@string/total_match_played"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20BowlingInningsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/innings(String.valueOf(t20BowlingData.innings))}"
+                    tools:text="@string/innings"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20OversTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_overs(String.valueOf(t20BowlingData.overs))}"
+                    tools:text="@string/total_overs"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalT20BowlingAverageTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/average(String.valueOf(t20BowlingData.average))}"
+                    tools:text="@string/average"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalT20EconRateTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/econ_rate(String.valueOf(t20BowlingData.econ_rate))}"
+                    tools:text="@string/econ_rate"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalT20RunsConceivedTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_runs(String.valueOf(t20BowlingData.runs))}"
+                    tools:text="@string/total_runs"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalT20WicketsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/wickets(String.valueOf(t20BowlingData.wickets))}"
+                    tools:text="@string/wickets"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalT20FiveWicketsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/_5_wickets_haul(String.valueOf(t20BowlingData.five_wickets))}"
+                    tools:text="@string/_5_wickets_haul"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

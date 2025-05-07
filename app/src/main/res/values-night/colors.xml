@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="colorPrimary">#6AAA6D</color>
+    <color name="colorPrimaryVariant">#00796B</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#81C784</color>
+    <color name="colorSecondaryVariant">#81C784</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FFFFFF</color>
+    <color name="red">#F10000</color>
+    <color name="grey">#535251</color>
+    <color name="tab_selected_text">#FFFFFF</color>
+    <!--  <color name="colorPrimary">#005689</color>
+      <color name="colorPrimaryDark">#005689</color>
+      <color name="colorAccent">#FF4081</color>-->
+
+    <color name="swipe_color_1">#FBFBFB</color>
+    <color name="swipe_color_2">#03A9F4</color>
+    <color name="swipe_color_3">#FFC107</color>
+    <color name="swipe_color_4">#FDDFD6</color>
+
+    <color name="color_section">#4CAF50</color>
+    <color name="color_author">#F3F3F3</color>
+
+    <!-- Colors for settings of color theme-->
+    <color name="white">#8F8F8F</color>
+    <color name="violet">#9c27b0</color>
+    <color name="light_green">#5ECD76</color>
+
+ <!--   &lt;!&ndash; Colors for gradient.xml file &ndash;&gt;
+    <color name="gradient_center_color">#880d0d0f</color>
+    <color name="gradient_end_color">#88C3C3C3</color>
+    <color name="gradient_start_color">#880f0f10</color>-->
+
+    <color name="color_trail_text">#FAFAFA</color>
+    <color name="color_date_text">#DDDDDD</color>
+
+    <color name="color_app_bar_text">#005689</color>
+    <color name="color_tab_text">#045F8E</color>
+
+    <color name="nav_bar_start">#435E7E</color>
+    <color name="nav_bar_end">#002e5b</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="light_green_light">#51A557</color>
+    <color name="series_list_bg">#397593</color>
+    <color name="backfab_bg">#62A862</color>
+    <color name="switchTrackOffColor">#A0BCD3</color>
+    <color name="onColor">#6672B3</color>
+    <color name="trackColor">#81C784</color>
+    <color name="color_news_bg">#41617C</color>
+    <color name="t20backfab">#000000</color>
+    <color name="matchdetailsscoreinfoheading">#B9D6BA</color>
+</resources>

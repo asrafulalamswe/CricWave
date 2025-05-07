@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="liveMatchInfo"
+            type="com.mdasrafulalam.cricwave.model.livescores.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:elevation="8dp"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_10"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/detailsMatchItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live"
+                android:fontFamily="@font/joti_one"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp20" />
+
+           <LinearLayout
+               android:id="@+id/detailsMatchItemStageRoundInfoLL"
+               android:layout_below="@+id/detailsMatchItemStatus"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/detailsMatchItemMatchInfo"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="3"
+                   app:setStageById="@{liveMatchInfo.stage_id}"
+                   android:textSize="@dimen/sp14"
+                   android:layout_marginTop="@dimen/dp_10"
+                   tools:text="West Indies Tour to Pakistan"/>
+               <TextView
+                   android:id="@+id/detailsMatchItemStageRoundInfo"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="2"
+                   android:gravity="center"
+                   android:text="@{liveMatchInfo.round}"
+                   android:textSize="@dimen/sp14"
+                   android:layout_marginTop="@dimen/dp_10"
+                   tools:text="1st round"/>
+           </LinearLayout>
+            <ImageView
+                android:id="@+id/detailsTeam1IV"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp_10"
+                app:setImageById="@{liveMatchInfo.localteam_id}"
+                tools:src="@drawable/house"
+                android:layout_below="@+id/detailsMatchItemStageRoundInfoLL"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/detailsTeam1NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="WI"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:setNameCodeById="@{liveMatchInfo.localteam_id}"
+                android:textSize="@dimen/sp20"
+                android:layout_below="@+id/detailsMatchItemStageRoundInfoLL"
+                android:layout_toEndOf="@+id/detailsTeam1IV"/>
+            <ImageView
+                android:id="@+id/detailsTeam2IV"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp_10"
+                app:setImageById="@{liveMatchInfo.visitorteam_id}"
+                tools:src="@drawable/series"
+                android:layout_below="@+id/detailsTeam1IV"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/detailsTeam2NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="PAK"
+                app:setNameCodeById="@{liveMatchInfo.visitorteam_id}"
+                android:layout_marginStart="@dimen/dp_10"
+                android:textSize="@dimen/sp20"
+                android:layout_below="@+id/detailsTeam1NameTV"
+                android:layout_toEndOf="@+id/detailsTeam1IV"/>
+
+            <TextView
+                android:id="@+id/liveTeam1OverTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchItemStageRoundInfoLL"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/detailsTeam1NameTV"
+                android:gravity="end"
+                android:textSize="@dimen/sp20"
+                tools:text="20 Overs" />
+
+            <TextView
+                android:id="@+id/liveTeam2OverTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchItemStageRoundInfoLL"
+                android:layout_marginStart="162dp"
+                android:layout_marginTop="38dp"
+                android:layout_toEndOf="@+id/detailsTeam1NameTV"
+                android:gravity="end"
+                android:textSize="@dimen/sp20"
+                tools:text="20 Overs" />
+
+            <TextView
+                android:id="@+id/liveTeam1ScoreTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_below="@+id/detailsMatchItemStageRoundInfoLL"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="end"
+                android:textSize="@dimen/sp14"
+                tools:text="170/8" />
+            <TextView
+                android:id="@+id/liveTeam2ScoreTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="170/8"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:textSize="@dimen/sp14"
+                android:layout_below="@+id/liveTeam1ScoreTV"/>
+            <TextView
+                android:id="@+id/winning1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                tools:text="TextView"
+                android:layout_below="@+id/detailsTeam2NameTV"/>
+
+            <TextView
+                android:id="@+id/winning2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:layout_alignParentEnd="true"
+                tools:text="TextView"
+                android:layout_below="@+id/detailsTeam2NameTV" />
+            <ProgressBar
+                android:id="@+id/winning_percentage_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:max="100"
+                android:minHeight="20dp"
+                android:indeterminate="false"
+                android:indeterminateOnly="false"
+                tools:progress="60"
+                android:secondaryProgressTint="@color/swipe_color_1"
+                android:progressDrawable="@drawable/winning_percentage_bar_drawable"
+                android:textColor="@color/black"
+                android:layout_below="@+id/winning1" />
+
+            <TextView
+                android:id="@+id/liveMatchResultOrStartTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Pakistan Won by 4 wickets"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@{liveMatchInfo.status}"
+                android:textSize="@dimen/sp20"
+                android:layout_below="@+id/winning_percentage_bar"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

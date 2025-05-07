@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recent"
+            type="com.mdasrafulalam.cricwave.model.fixturesfilteringdateincludingruns.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_margin="@dimen/dp_10"
+        android:elevation="8dp"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_10"
+        android:layout_height="160dp">
+        <RelativeLayout
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/detailsMatchItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@{recent.status}"
+                android:fontFamily="@font/joti_one"
+                android:textColor="@color/color_trail_text"
+                tools:text="@string/finished"
+                android:textSize="@dimen/sp20" />
+
+            <TextView
+                android:id="@+id/detailsMatchItemMatchInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchItemStatus"
+                android:text="@{String.format(recent.type+' '+recent.round)}"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/dp_10"
+                tools:text="1st February, West Indies Tour to Pakistan"/>
+            <ImageView
+                android:id="@+id/detailsTeam1IV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@+id/detailsTeam1NameTV"
+                android:layout_marginStart="10dp"
+                tools:src="@drawable/house"
+                app:setImageById="@{recent.localteam_id}"
+                android:layout_below="@+id/detailsMatchItemMatchInfo"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/detailsTeam1NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="WI"
+                app:setNameCodeById="@{recent.localteam_id}"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="30dp"
+                android:textSize="@dimen/sp20"
+                android:layout_below="@+id/detailsMatchItemMatchInfo"
+                />
+            <TextView
+                android:id="@+id/vsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/vs"
+                android:textSize="30sp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:layout_below="@+id/detailsMatchItemMatchInfo"/>
+
+            <ImageView
+                android:id="@+id/detailsTeam2IV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/detailsMatchItemMatchInfo"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="6dp"
+                android:layout_toEndOf="@+id/vsTV"
+                app:setImageById="@{recent.visitorteam_id}"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/series" />
+
+            <TextView
+                android:id="@+id/detailsTeam2NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchItemMatchInfo"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/detailsTeam2IV"
+                android:textSize="@dimen/sp20"
+                app:setNameCodeById="@{recent.visitorteam_id}"
+                tools:text="PAK" />
+
+            <TextView
+                android:id="@+id/liveMatchResultOrStartTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Pakistan Won by 4 wickets with 26 ball remaining and 4 wickets left"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{recent.note}"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_10"
+                android:maxLines="2"
+                android:textSize="@dimen/sp12"
+                android:layout_below="@+id/detailsTeam2IV"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

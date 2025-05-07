@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="recent"
+            type="com.mdasrafulalam.cricwave.model.fixturesfilteringdateincludingruns.Data" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:elevation="8dp"
+        android:layout_margin="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_10"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/dp_10"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/detailsMatchItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:fontFamily="@font/joti_one"
+                android:text="@{recent.status}"
+                android:textColor="@color/color_trail_text"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/detailsMatchItemMatchInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{recent.type}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp20"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="T20" />
+
+            <TextView
+                android:id="@+id/detailsMatchiDateTimeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@+id/detailsMatchItemMatchInfo"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsMatchItemStageInfo"
+                app:setDateAndTime="@{recent.starting_at}"
+                tools:text="09 July, 2022" />
+
+            <ImageView
+                android:id="@+id/detailsTeam1IV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/detailsMatchiDateTimeInfo"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toEndOf="@+id/detailsTeam1NameTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsMatchiDateTimeInfo"
+                app:setImageById="@{recent.localteam_id}"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/house" />
+
+            <TextView
+                android:id="@+id/detailsTeam1NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchiDateTimeInfo"
+                android:layout_marginStart="16dp"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintStart_toEndOf="@+id/detailsTeam1IV"
+                app:layout_constraintTop_toTopOf="@+id/detailsTeam1IV"
+                app:setNameCodeById="@{recent.localteam_id}"
+                tools:text="WI" />
+
+            <ImageView
+                android:id="@+id/detailsTeam2IV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/detailsMatchiDateTimeInfo"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsTeam1IV"
+                app:setImageById="@{recent.visitorteam_id}"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/series" />
+
+            <TextView
+                android:id="@+id/detailsTeam2NameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsMatchiDateTimeInfo"
+                android:layout_toEndOf="@+id/detailsTeam2IV"
+                android:textSize="@dimen/sp20"
+                android:layout_marginStart="@dimen/dp_16"
+                app:layout_constraintStart_toEndOf="@+id/detailsTeam2IV"
+                app:layout_constraintTop_toTopOf="@+id/detailsTeam2IV"
+                app:setNameCodeById="@{recent.visitorteam_id}"
+                tools:text="PAK" />
+
+            <TextView
+                android:id="@+id/liveMatchResultOrStartTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailsTeam2IV"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="@{recent.note}"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsTeam2NameTV"
+                tools:text="Pakistan Won by 4 wickets" />
+
+            <TextView
+                android:id="@+id/detailsMatchItemStageRoundInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@{recent.round}"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsMatchItemMatchInfo"
+                tools:text="1st round" />
+
+            <TextView
+                android:id="@+id/detailsMatchItemStageInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="3"
+                android:layout_marginStart="16dp"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsMatchItemStatus"
+                app:setStageById="@{recent.stage_id}"
+                tools:text="West Indies Tour to Pakistan" />
+            <TextView
+                android:id="@+id/recentTeam1ScoreTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailsTeam1NameTV"
+                tools:text="170/8" />
+
+            <TextView
+                android:id="@+id/recentTeam2ScoreTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
+                android:gravity="end" android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailsTeam2NameTV"
+                tools:text="170/8" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

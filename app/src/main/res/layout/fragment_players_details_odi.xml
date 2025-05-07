@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="odiBattingData"
+            type="com.mdasrafulalam.cricwave.model.playerinfowithcareerbyid.Batting" />
+        <variable
+            name="odiBowlingData"
+            type="com.mdasrafulalam.cricwave.model.playerinfowithcareerbyid.Bowling" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.PlayersDetailsOdiFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/playersOdiBatttingShowTV"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/batting"
+                android:textColor="@color/white"
+                android:fontFamily="@font/new_rocker"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bg_selector_shape"
+                android:textSize="30sp"
+                app:drawableEndCompat="@drawable/expand"
+                app:drawableTint="@color/white" />
+            <LinearLayout
+                android:id="@+id/battingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totalOdimatchesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/total_match_played"
+                    android:text="@{@string/total_match_played(String.valueOf(odiBattingData.matches))}"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiInningsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/innings"
+                    android:text="@{@string/innings(String.valueOf(odiBattingData.innings))}"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiRunsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_runs(String.valueOf(odiBattingData.runs_scored))}"
+                    tools:text="@string/total_runs"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiHighestScoreTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/highest_innings(String.valueOf(odiBattingData.highest_inning_score))}"
+                    tools:text="@string/highest_innings"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiAverageTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/average_score(String.valueOf(odiBattingData.average))}"
+                    tools:text="@string/average_score"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiStrikeRateTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/strike_rate(String.valueOf(odiBattingData.strike_rate))}"
+                    tools:text="@string/strike_rate"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiUnbeatensTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/unbeateans(String.valueOf(odiBattingData.not_outs))}"
+                    tools:text="@string/unbeateans"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiCenturiesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/hundreds(String.valueOf(odiBattingData.hundreds))}"
+                    tools:text="@string/hundreds"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiFiftiesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/fifties(String.valueOf(odiBattingData.fifties))}"
+                    tools:text="@string/fifties"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiBoundariesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_boundaries(String.valueOf(odiBattingData.four_x+odiBattingData.six_x))}"
+                    tools:text="@string/total_boundaries"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/playersOdiBowlingShowTV"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bowling"
+                android:textColor="@color/white"
+                android:fontFamily="@font/new_rocker"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bg_selector_shape"
+                android:textSize="30sp"
+                app:drawableEndCompat="@drawable/expand"
+                app:drawableTint="@color/white" />
+            <LinearLayout
+                android:id="@+id/bowlingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/totalOdibowlingmatchesTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_match_played(String.valueOf(odiBowlingData.matches))}"
+                    tools:text="@string/total_match_played"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiBowlingInningsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/innings(String.valueOf(odiBowlingData.innings))}"
+                    tools:text="@string/innings"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiOversTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_runs(String.valueOf(odiBowlingData.overs))}"
+                    tools:text="@string/total_runs"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalOdiBowlingAverageTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/average(String.valueOf(odiBowlingData.average))}"
+                    tools:text="@string/average"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/totalOdiEconRateTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/econ_rate(String.valueOf(odiBowlingData.econ_rate))}"
+                    tools:text="@string/econ_rate"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalOdiRunsConceivedTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_runs(String.valueOf(odiBowlingData.runs))}"
+                    tools:text="@string/total_runs"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalOdiWicketsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/wickets(String.valueOf(odiBowlingData.wickets))}"
+                    tools:text="@string/wickets"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/totalOdiFiveWicketsTV"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/_5_wickets_haul(String.valueOf(odiBowlingData.five_wickets))}"
+                    tools:text="@string/_5_wickets_haul"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
